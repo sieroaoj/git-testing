@@ -4,6 +4,8 @@ aside {
   margin-right: 1em;
 }
 
+/* edit 1 */
+
 /* Float method */
 .float-method {
   overflow: hidden; /* BFC */
