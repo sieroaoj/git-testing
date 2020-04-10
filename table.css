@@ -1,0 +1,115 @@
+/* Common styles */
+aside {
+  width: 200px;
+  margin-right: 1em;
+}
+
+/* Float method */
+.float-method {
+  overflow: hidden; /* BFC */
+}
+.float-method > aside {
+  float: left;
+}
+.float-method > .main {
+  overflow: hidden; /* BFC */
+}
+
+/* inline-block method */
+.inbl-method {
+  font-size: 0; /* whitespace fix */
+}
+.inbl-method > * {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.1rem; /* whitespace fix */
+}
+.inbl-method > .main {
+  width: calc(100% - 200px - 1em);
+}
+
+/* Table method */
+.table-method {
+  overflow: hidden;
+}
+.table-method > .container {
+  display: table;
+  table-layout: fixed;
+  border-spacing: 1em 0;
+  margin-left: -1em;
+  margin-right: -1em;
+}
+.table-method > .container > * {
+  display: table-cell;
+}
+
+/* Flexbox method */
+.flex-method {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-method > .main {
+  flex: 1 1 0%;
+}
+
+/* Grid Layout method */
+.grid-method {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 1em;
+  align-items: start;
+}
+
+
+
+/* Decoration */
+
+* {
+  box-sizing: border-box;
+}
+div {
+  word-wrap: break-word;
+}
+body {
+	margin: 0;
+  padding: 1em;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.1em;
+}
+section,
+aside,
+.main {
+  border-radius: 4px;
+  color: #fff;
+}
+section {
+  background: beige;
+}
+aside {
+  padding: 231px;
+	background: hotpink;
+}
+.main {
+  padding: 5px;
+	background: dodgerblue;
+}
+h1 {
+	margin: 1em 0 0;
+	color: #345;
+	text-align: center;
+  font-family: georgia, "trebuchet ms", arial, serif;
+}
+h2 {
+	margin: 1.5em 0 0;
+	color: #345;
+	text-align: center;
+  font-family: georgia, "trebuchet ms", arial, serif;
+}
+body > p {
+  text-align: center;
+  margin-top: 0;
+  color: #777;
+}
+a {
+  color: inherit;
+}
